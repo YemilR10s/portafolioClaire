@@ -1,0 +1,401 @@
+
+/********* stylos generales ************/
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'PT Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/************ colores *************/
+:root{
+    --color1: #000000;
+    --color2: #ffffff;
+    --color3: #64d954;
+}
+/************ menu *************/
+.navBar{
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: var(--color1);
+    z-index: 1;
+}
+.navBar .logo{
+    color: var(--color2);
+    font-size: 2em;
+}
+
+.navBar .logo span{
+    color: var(--color3);
+    font-size: 1em;
+
+}
+.navBar ul{
+    display: flex;
+    
+}
+
+.navBar i{
+    display: none;
+    
+}
+.navBar ul li a{
+    display: flex;
+    margin: 0 20px;
+    color: var(--color2);
+    font-size: 1.5em;
+}
+.navBar ul li a:hover{
+    color: var(--color3);
+  
+}
+
+.navBar ul li a.active{
+    color: var(--color3);
+}
+/************ responsive *************/
+@media (max-width:1100px) {
+    .navBar .logo{
+        font-size: 1.5em;
+    }
+    
+    .navBar .logo span{
+        font-size: 1em;
+    
+    }
+    .navBar ul li a{
+        font-size: 1.2em;
+    }
+}
+@media (max-width:800px){
+    .navBar ul{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 370px;
+        height: 400px;
+        top: 0;
+        left: -100%;
+        margin-top: 80px;
+        border-bottom: 3px solid var(--color3);
+        border-top: 3px solid var(--color3);
+        border-right: 3px solid var(--color3);
+        transition: 0.5s;
+        background: var(--color1);
+
+        
+    }
+   
+    .navBar .ul.active{
+        left: 0;
+
+    }
+    .navBar i{
+        position: absolute;
+        display: block;     
+        color: var(--color3);
+        right:0;
+        top: 0;
+        z-index: 1;
+        margin: 20px;
+        font-size: 2em;
+        cursor: pointer;
+        
+    }
+    .navBar .logo{
+        font-size: 2em;
+    }
+}
+@media (max-width:400px){
+    .navBar .logo{
+        font-size: 1.5em;
+    }
+    .navBar .fa-bars{
+        font-size: 2em;
+    }
+}
+
+/************ home *************/
+.home{
+    width: 100%;
+    height: 700px;
+    background: var(--color1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home .home-text{
+    width: 50%;
+    color: var(--color2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+.home .home-text .texto{
+    width: 500px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
+.home .home-text .texto h1{
+    font-size: 4em;
+}
+.home .home-text .texto h1 span{
+    color: var(--color3);
+}
+.home .home-text .texto h2{
+    font-size: 2.5em;
+}
+.home .home-text .texto h2 span{
+    position: relative;
+}
+.home .home-text .texto h2 span::before{
+    content: 'web development';
+    color: var(--color3);
+    animation: word 20s infinite;
+
+}
+.home .home-text .texto h2 span::after{
+    content: '';
+    position: absolute;
+    width: calc(100% + 8);
+    height: 100%;
+    background-color: var(--color1);
+    border-left: 2px solid var(--color3);
+    right: -8px;
+    animation: cursor .6s infinite, typing 20s steps(14) infinite;
+
+}
+@keyframes cursor {
+    to{
+    border-left: 2px solid var(--color3);
+
+    }
+}
+@keyframes word {
+   
+    0%,20%{
+        content: 'web developmen';
+    }
+    21%,40%{
+        content: 'web desing';
+    }
+    41%,60%{
+        content: 'photographer';
+    }
+    61%,80%{
+        content: 'blogger';
+    }
+    81%,100%{
+        content: 'content creator'
+    }
+}
+@keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    }
+}
+.home .home-text .texto .iconos i{
+    font-size: 2em;
+    margin: 0 10px;
+    color: var(--color3);
+}
+.home .home-text .texto .iconos i:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.home .home-text .texto button{
+    width: 150px;
+    padding: 10px;
+    background: none;
+    border-radius: 10px;
+    border: 2px solid var(--color3);
+    color: var(--color3);
+    cursor: pointer;
+}
+.home .home-text .texto button:hover{
+    box-shadow: 0px 0px 50px var(--color3);
+   
+}
+.home .home-img{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+
+}
+.home .home-img img{
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+}
+@media (max-width:1100px) {
+    .home .home-text .texto{
+        width: 400px;
+        
+    }
+    .home .home-img img{
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+    }
+}
+@media (max-width:900px){
+    .home{
+        height: 800px;
+        display: flex;
+        flex-direction: column-reverse;
+        
+    }
+    .home .home-text{
+        width: 100%;
+        margin-top: 50px;
+        
+    }
+    .home .home-img{
+        margin-top: 400px;
+        width: 100%;
+        
+    }
+    .home .home-text .texto{
+        width: 500px;
+        
+    }
+    .home .home-img img{
+        width: 500px;
+        height: 500px;
+        
+    }
+    
+}
+@media (max-width:700px){
+    .home .home-img{
+        margin-top: 300px;
+        
+    }
+    .home .home-text .texto{
+        width: 350px;
+        height: 450px;
+        
+    }
+    .home .home-text .texto h1{
+        font-size: 3em;
+    }
+    .home .home-text .texto h2{
+        font-size: 1.5em;
+    }
+    .home .home-img img{
+        width: 360px;
+        height: 360px;
+        
+    }
+    
+}
+/************ projects *************/
+.projects{
+    width: 100%;
+    height: 800px;
+    background: var(--color1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.projects h2{
+    color: var(--color2);
+    font-size: 5em;
+}
+.projects .servicesCajas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.projects .servicesCajas .cajas{
+    width: 400px;
+    height: 500px;
+    border: 2px solid var(--color3);
+    border-radius: 20px;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: var(--color1);
+    color: var(--color2);
+}
+.projects .servicesCajas .cajas:hover{
+    background: var(--color2);
+    color: var(--color1);
+    
+}
+.projects .servicesCajas .cajas i{
+    font-size: 5em;
+    color: var(--color3);
+}
+.projects .servicesCajas .cajas p{
+    margin: 0 30px;
+}
+.projects .servicesCajas .cajas button{
+    width: 150px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid var(--color3);
+    background: none;
+    background: var(--color1);
+    color: var(--color3);
+}
+.projects .servicesCajas .cajas button:hover{
+    box-shadow: 0px 0px 50px var(--color3);
+    cursor: pointer;
+}
+@media (max-width: 1322px) {
+    .projects{
+        height: 1200px;
+    }
+    .projects .servicesCajas .cajas{
+        margin: 30px;
+    }
+}
+@media (max-width: 922px){
+    .projects{
+        width: 100%;
+        height: 2500px;
+        justify-content: center;
+    }
+}
+@media (max-width: 472px){
+    .projects .servicesCajas .cajas{
+        width: 360px;
+    }
+}
+
+/************ education *************/
+.education{
+    width: 100%;
+    height: 800px;
+    background: var(--color1);
+}
+/************ contact *************/
+.contact{
+    width: 100%;
+    height: 800px;
+    background: var(--color1);
+}
