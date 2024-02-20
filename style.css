@@ -32,7 +32,6 @@
     color: var(--color2);
     font-size: 2em;
 }
-
 .navBar .logo span{
     color: var(--color3);
     font-size: 1em;
@@ -42,7 +41,6 @@
     display: flex;
     
 }
-
 .navBar i{
     display: none;
     
@@ -57,7 +55,6 @@
     color: var(--color3);
   
 }
-
 .navBar ul li a.active{
     color: var(--color3);
 }
@@ -100,11 +97,11 @@
         left: 0;
 
     }
-    .navBar i{
+    .navBar .fa-bars{
         position: absolute;
         display: block;     
         color: var(--color3);
-        right:0;
+        right:15px;
         top: 0;
         z-index: 1;
         margin: 20px;
@@ -122,6 +119,9 @@
     }
     .navBar .fa-bars{
         font-size: 2em;
+    }
+    .navBar{
+        overflow-x: hidden;
     }
 }
 
@@ -286,9 +286,13 @@
     
 }
 @media (max-width:700px){
+    .home{
+        height: 1000px;
+    }
     .home .home-img{
-        margin-top: 300px;
-        
+        width: 100%;
+        margin-top: 100px;
+    
     }
     .home .home-text .texto{
         width: 350px;
@@ -377,7 +381,7 @@
 @media (max-width: 922px){
     .projects{
         width: 100%;
-        height: 2500px;
+        height: 2000px;
         justify-content: center;
     }
 }
@@ -390,7 +394,7 @@
 /************ education *************/
 .education{
     width: 100%;
-    height: 1000px;
+    height: 1200px;
     background: var(--color1);
     display: flex;
     flex-direction: column;
@@ -479,18 +483,111 @@
     }
     .timeline-items::before{
         left: 0;  
-        margin-left: 20px;   
+        margin-left: 20px; 
 
     }
     .education .timeline-items .caja .timeline_dot{
         left: -40px;
+    
            
 
+    }
+}
+@media (max-width:500px){
+
+    .education{
+        width: 100%;
+        height: 1400px;    
     }
 }
 /************ contact *************/
 .contact{
     width: 100%;
-    height: 800px;
+    height: 1000px;
     background: var(--color1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact h3{
+    font-size: 4em;
+    color: var(--color2);
+    margin-bottom: 50px;
+}
+.contact .img_form{
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+
+}
+.contact .img_form .img{
+    width: 50%;
+    height: 600px;
+    margin: 30px;
+    background-image: url(contact.svg);
+    background-position: center;
+    background-size: cover;
+}
+.contact .img_form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    height: 600px;
+    border: 2px solid var(--color3);
+    color: var(--color2);
+    border-radius: 20px;
+    margin: 30px;
+
+}
+.contact .img_form form input{
+    width: 80%;
+    height: 60px;
+    padding: 0 40px;
+    background: none;
+    color: var(--color2);
+    border: 1px solid var(--color3);
+    border-radius: 10px;
+    font-size: 1em;
+}
+.contact .img_form form button{
+    width: 80%;
+    height: 60px;
+    padding: 0 40px;
+    background: none;
+    color: var(--color2);
+    border: 1px solid var(--color3);
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.contact .img_form form button:hover{
+    transform: scale(1.1);
+}
+.contact .img_form form .item:hover{
+    border: 1px solid var(--color2);
+
+}
+.contact .img_form form textarea{
+    width: 80%;
+    height: 100px;
+    padding: 20px;
+    background: none;
+    color: var(--color2);
+    border: 1px solid var(--color3);
+    border-radius: 10px;
+    resize: none;
+    font-size: 1em;
+}
+@media (max-width:900px) {
+    .contact .img_form .img{  
+        display: none;
+    }
+    .contact .img_form form{
+        width: 80%;
+    }
 }
