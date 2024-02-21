@@ -17,6 +17,7 @@
     --color2: #ffffff;
     --color3: #64d954;
 }
+
 /************ menu *************/
 .navBar{
     position: fixed;
@@ -55,7 +56,7 @@
     color: var(--color3);
   
 }
-.navBar ul li a.active{
+.navBar ul li .nav_link.active{
     color: var(--color3);
 }
 /************ responsive *************/
@@ -82,17 +83,17 @@
         width: 370px;
         height: 400px;
         top: 0;
-        left: -100%;
+        left: -110%;
         margin-top: 80px;
         border-bottom: 3px solid var(--color3);
         border-top: 3px solid var(--color3);
         border-right: 3px solid var(--color3);
         transition: 0.5s;
         background: var(--color1);
-
+        
         
     }
-   
+    
     .navBar .ul.active{
         left: 0;
 
@@ -120,9 +121,7 @@
     .navBar .fa-bars{
         font-size: 2em;
     }
-    .navBar{
-        overflow-x: hidden;
-    }
+   
 }
 
 /************ home *************/
@@ -312,6 +311,18 @@
     }
     
 }
+@media (max-width:400px){
+    .home .home-img img{
+        width: 330px;
+        height: 330px;
+        
+    }
+    .home .home-text .texto{
+        width: 330px;
+        height: 430px;
+        
+    }
+}
 /************ projects *************/
 .projects{
     width: 100%;
@@ -386,8 +397,14 @@
     }
 }
 @media (max-width: 472px){
+    .projects h2{
+        font-size: 2.5em;
+    }
     .projects .servicesCajas .cajas{
-        width: 360px;
+        width: 330px;
+        margin-right: 0;
+        margin-left: 0;
+
     }
 }
 
@@ -494,7 +511,9 @@
     }
 }
 @media (max-width:500px){
-
+    .education h2{
+        font-size: 2.5em;
+    }
     .education{
         width: 100%;
         height: 1400px;    
@@ -583,11 +602,24 @@
     resize: none;
     font-size: 1em;
 }
+.contact .yemilP, .yemil{
+    position: relative;
+    color: var(--color2);
+    margin-top: 100px;
+}
 @media (max-width:900px) {
     .contact .img_form .img{  
         display: none;
     }
     .contact .img_form form{
         width: 80%;
+    }
+}
+@media (max-width:400px){
+    .contact h3{
+        font-size: 2.5em;
+    }
+    .contact  .yemilP, .yemil{
+        margin-top: 0px;
     }
 }
